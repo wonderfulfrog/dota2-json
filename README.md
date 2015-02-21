@@ -9,7 +9,8 @@ Requirements
 
 Setup
 -----
-1. Add the necessary data files inside the `data` folder.  These files are not included and must be retrieved using a program capable of reading `gcf` files, such as [GCFScape](http://nemesis.thewavelength.net/index.php?p=25).  You will need `npc_heroes.txt`, `npc_abilities.txt`, `activelist.txt`, and `dota_english.txt`.
+1. Add the necessary data files `npc_heroes.txt`, `npc_abilities.txt`, `activelist.txt`, and `dota_english.txt` into the `data` folder.  
+  * These files are not included and must be retrieved using a program capable of reading `gcf` files, such as [GCFScape](http://nemesis.thewavelength.net/index.php?p=25).
 2. Make sure `vdfparser.php` is located in the same directory as `heroes.php`.
 3. Run `heroes.php` to generate the JSON file for all hero data.
 
@@ -17,43 +18,50 @@ Schema
 ------
 
 #### Hero
-- *id*: The internal ID of the hero.
-- *name*: The name of the hero as it appears in the language file (defaults to English)
-- *team*: The side the hero is associated with.
-- *type*: The type of the hero, either `melee` or `ranged`.
-- *primary_attr*: The Primary Attribute of the hero.
-- *base_str*: The starting Strength of the hero.
-- *str_per_level*: The amount of Strength a hero gains per level.
-- *base_agi*: The starting Agility of the hero.
-- *agi_per_level*: The amount of Agility a hero gains per level.
-- *base_int*: The starting Intelligence of the hero.
-- *int_per_level*: The amount of Intelligence a hero gains per level.
-- *base_damage_min*: The minimum starting damage of the hero.
-- *base_damage_max*: The maximum starting damage of the hero.
-- *base_movement_speed*: The base movement speed of the hero.
-- *turn_rate*: The hero's turn rate (how quickly they can change directions).
-- *base_armor*: The starting Armor of the hero.
-- *active*: (boolean) Whether or not the hero is available for public play.
-- *bio*: The description/lore for the hero.
-- *spells*: (list of objects) A list of all of the heroes' abilities.
+
+Key                 | Value
+--------------------|-------------------------------------------------------------------------------
+id                  | The internal ID of the hero.
+name                | The name of the hero as it appears in the language file (defaults to English).
+team                | The side the hero is associated with.
+type                | The type of the hero, either `melee` or `ranged`.
+primary_attr        | The Primary Attribute of the hero.  Can be either `str`, `agi`, or `int`
+base_str            | The starting Strength of the hero.
+str_per_level       | The amount of Strength a hero gains per level.
+base_agi            |The starting Agility of the hero.
+agi_per_level       |The amount of Agility a hero gains per level.
+base_int            |The starting Intelligence of the hero.
+int_per_level       | The amount of Intelligence a hero gains per level.
+base_damage_min     | The minimum starting damage of the hero.
+base_damage_max     | The maximum starting damage of the hero.
+base_movement_speed | The base movement speed of the hero.
+turn_rate           | The hero's turn rate (how quickly they can change directions).
+base_armor          | The starting Armor of the hero.
+active              | (boolean) Whether or not the hero is available for public play.
+bio                 | The description/lore for the hero (defaults to English).
+spells              | (list of objects) A list of all of the heroes' abilities.
 
 ### Ability
-- *id*: The internal ID of the ability.
-- *name*: The name of the ability as it appears in the language file (defaults to English)
-- *mana_cost*: The mana cost(s) of the ability.  A space-seperated string corresponding to each level of the ability.
-- *cooldown*: The cooldown(s) of the ability.  A space-seperated string corresponding to each level of the ability.
-- *damage*: The damage value(s) of the ability.  A space-seperated string corresponding to each level of the ability.  This value is not always populated, as the damage values can be contained inside the property list of the ability.
-- *targets*: The target(s) of the ability.  A comma-seperated string.
-- *affects*: The unit type(s) affected by the ability.  A comma-seperated string.
-- *damage_type*: The damage type of the ability.  Can be either `Physical`, `Magical`, or `Pure`.
-- *pierces_spell_immunity* - (boolean) Whether or not this ability pierces spell immunity.
-- *description* - A text description about the ability.
-- *lore* - Flavor text that appears near the bottom of the ability in-game.
-- *properties* - (list of objects) Various properites about the ability.
+Key                    | Value
+-----------------------|-------------------------------------------------------------------------------------------------
+id                     | The internal ID of the ability.
+name                   | The name of the ability as it appears in the language file (defaults to English).
+mana_cost              | The mana cost(s) of the ability.  A space-seperated string corresponding to each level of the ability.
+cooldown               | The cooldown(s) of the ability.  A space-seperated string corresponding to each level of the ability.
+damage                 | The damage value(s) of the ability.  A space-seperated string corresponding to each level of the ability.  This value is not always populated, as the damage values can be contained inside the property list of the ability.
+targets                | The target(s) of the ability.  A comma-seperated string.
+affects                | The unit type(s) affected by the ability.  A comma-seperated string.
+damage_type            | The damage type of the ability.  Can be either `Physical`, `Magical`, or `Pure`.
+pierces_spell_immunity | (boolean) Whether or not this ability pierces spell immunity.
+description            | A text description about the ability (defaults to English).
+lore                   | Flavor text that appears near the bottom of the ability in-game (defaults to English).
+properties             | (list of objects) Various properites about the ability.
 
 ### Ability Property
-- *name* - The name of the property as it appears in the language file (defaults to English)
-- *value* - The space-separated values that correspond to the property.
+Key      | Value
+---------|----------------------------------------------------------------------------------
+name     | The name of the property as it appears in the language file (defaults to English)
+value    | The space-separated values that correspond to the property.
 
 Samples
 --------
