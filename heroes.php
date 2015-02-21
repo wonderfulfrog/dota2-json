@@ -185,6 +185,7 @@ foreach($hero_data['DOTAHeroes'] as $key => $hero) {
 			}
 		}
 
+		$spell_description = str_replace('%%', '%', $spell_description);
 		$heroes[$hero_name_basic]['spells'][$spell_name_basic]['description'] = $spell_description;
 
 		$i++;
