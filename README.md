@@ -9,8 +9,13 @@ Requirements
 
 Setup
 -----
-1. Add the necessary data files `npc_heroes.txt`, `npc_abilities.txt`, `activelist.txt`, and `dota_english.txt` into the `data` folder.  
-  * These files are not included and must be retrieved using a program capable of reading `gcf` files, such as [GCFScape](http://nemesis.thewavelength.net/index.php?p=25).
+1. Add the necessary data files to the `data` folder:
+ * `npc_heroes.txt`
+ * `npc_abilities.txt`
+ * `activelist.txt`
+ * `dota_english.txt`
+
+ These files are not included and must be retrieved using a program capable of reading `gcf` files, such as [GCFScape](http://nemesis.thewavelength.net/index.php?p=25).
 2. Make sure `vdfparser.php` is located in the same directory as `heroes.php`.
 3. Run `heroes.php` to generate the JSON file for all hero data.
 
@@ -142,4 +147,26 @@ Examples from the JSON file are included here.  Some parts have been truncated f
 
 License
 -------
-See `LICENSE`.
+```
+The MIT License (MIT)
+
+Copyright (c) 2015 Devin Lumley
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
