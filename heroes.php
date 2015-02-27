@@ -2,10 +2,17 @@
 
 include('vdfparser.php');
 
+$language_data_file_suffix = 'english';
+$lang = isset($_GET['lang']) ? htmlspecialchars($_GET['lang']) : 'english';
+if($lang) $language_data_file_suffix = $lang;
+$language_data_file = 'dota_' . $language_data_file_suffix . '.txt';
+
+if(!file_exists('data/' . $language_data_file)) die('Error: could not find language data file ' . $language_data_file);
+
 $hero_data = VDFParse('data/npc_heroes.txt');
 $spells_data = VDFParse('data/npc_abilities.txt');
 $activelist_data = VDFParse('data/activelist.txt');
-$language_data = VDFParse('data/dota_english.txt');
+$language_data = VDFParse('data/' . $language_data_file);
 
 $spells = $spells_data['DOTAAbilities'];
 $activelist = $activelist_data['whitelist'];
