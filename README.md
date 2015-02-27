@@ -17,6 +17,8 @@ Setup
 
  These files are not included and must be retrieved using a program capable of reading `gcf` files, such as [GCFScape](http://nemesis.thewavelength.net/index.php?p=25).
 2. Make sure `vdfparser.php` is located in the same directory as `heroes.php`.
+
+ _Optional_: Add the `lang` parameter (e.g. `lang=spanish`) to load a different language file than English.  The language file that will be loaded is `dota_[lang_parameter].txt`.  The script will exit if the language file cannot be found.
 3. Run `heroes.php` to generate the JSON file for all hero data.
 
 Schema
